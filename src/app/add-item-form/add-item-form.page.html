@@ -1,0 +1,23 @@
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
+  <ion-item>
+    <ion-label position="fixed">Amount</ion-label>
+    <ion-input
+      [ngModel]="item.amount"
+      name="amount"
+      required
+      type="number"
+      style="width: 100%"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Description</ion-label>
+    <ion-input
+      [ngModel]="item.description"
+      name="description"
+      required
+      type="text"
+      style="width: 100%"
+    ></ion-input>
+  </ion-item>
+  <ion-button type="submit" [color]="isNewItem ? 'primary': 'success'" [disabled]="!itemForm.valid"><p *ngIf="isNewItem">Add</p><p *ngIf="!isNewItem">Save</p></ion-button>
+</form>

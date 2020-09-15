@@ -1,0 +1,26 @@
+<h1 class="title">Edit</h1>
+<form>
+  <ion-item>
+    <ion-label position="fixed">Amount</ion-label>
+    <ion-input
+      [value]="item.amount"
+      (input)="changeAmount($event.target.value)"
+      name="amount"
+      required
+      type="number"
+      style="width: 100%"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Description</ion-label>
+    <ion-input
+      [value]="item.description"
+      (input)="changeDescription($event.target.value)"
+      name="description"
+      required
+      type="text"
+      style="width: 100%"
+    ></ion-input>
+  </ion-item>
+  <ion-button (click)="onSubmitted(item)" color="success" [disabled]="!item.amount && item.description != ''">Save</ion-button>
+</form>
